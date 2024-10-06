@@ -1,17 +1,17 @@
-.main_fejlec a
+.main_fejlec
 {
-	display: inline-block;
+	background-color: black;
 	color: white;
 	text-align: center;
 	padding: 14px;
-	text-decoration: none;
 	font-size: 20px;
 	border-radius: 5px;
 }
-
-body
+.a
 {
-	background-color: black;
+	padding: 14px;
+	text-decoration: none;
+	color: white;
 }
 
 .main_fejlec a:hover 
@@ -26,13 +26,52 @@ body
 	text-align: center;
 	font-size: 20px;
 	padding: 14px;
+	background-color: black;
+}
+.kep
+{
+	margin-top: 120px;
 }
 
-.link1
+.focim
 {
-	border-style: solid;
-	border-color: gray;
-	width: 400px;
-	height: 400px;
+	font-size: 80px;
+	color: white;
+	
+}
+
+.szoveg1
+{
+	color: white;
+	background-image: url("hatter.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 	text-align: center;
+	border-color: black;
+	height: 750px;
+}
+
+.szoveg_forma_1
+{
+	font-size: 35px;
+}
+
+.forma1
+{
+	color: black;
+	border-style: solid;
+	padding-left: 25px;
+	border-color:  white;
+	background-color: white;
+}
+
+.meglatogat_button
+{
+	background-color: white;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-color: black;
 }
