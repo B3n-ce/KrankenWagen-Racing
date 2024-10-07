@@ -1,3 +1,8 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(TRACERI_.tff);
+}
+
 .main_fejlec
 {
 	background-color: black;
@@ -74,4 +79,12 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border-color: black;
+}
+
+.kiskepek
+{
+	border-style: solid;
+	border-color: black;
+	width: 300px;
+	height: 300px;
 }
