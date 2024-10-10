@@ -72,13 +72,14 @@
 
 .meglatogat_button
 {
-	background-color: white;
-	padding: 10px;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border-color: black;
+	display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+	margin-bottom: 15px;
 }
 
 .kiskepek
@@ -87,4 +88,23 @@
 	border-color: black;
 	width: 300px;
 	height: 300px;
+}
+
+.footer
+{
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.forma1_cim
+{
+	border-style: solid;
+	border-top: 0px;
+	border-right: 0px;
+	border-left: 0px;
+	margin-right: 20px;
 }
