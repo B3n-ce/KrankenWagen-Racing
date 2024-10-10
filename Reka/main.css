@@ -113,3 +113,23 @@
 	border-left: 0px;
 	margin-right: 20px;
 }
+
+.zaszlo-kep
+{
+    width: 90%;
+    height: auto;
+}
+
+.news-container
+{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.news-kep
+{
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
