@@ -10,7 +10,6 @@
 	text-align: center;
 	padding: 14px;
 	font-size: 20px;
-	border-radius: 5px;
 }
 .a
 {
@@ -40,7 +39,7 @@
 
 .focim
 {
-	font-size: 80px;
+	font-size: 70px;
 	color: white;
 	
 }
@@ -58,7 +57,7 @@
 
 .szoveg_forma_1
 {
-	font-size: 35px;
+	font-size: 20px;
 }
 
 .forma1
@@ -68,6 +67,8 @@
 	padding-left: 25px;
 	border-color:  white;
 	background-color: white;
+	margin: 20px;
+	border-radius: 20px;
 }
 
 .meglatogat_button
@@ -97,7 +98,6 @@
     text-align: center;
     padding: 10px 0;
 	margin-top: 15px;
-	margin-bottom: 15px;
 }
 
 .forma1_cim
