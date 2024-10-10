@@ -95,14 +95,23 @@
 	height: 300px;
 }
 
+body {
+    padding-bottom: 80px;
+}
+
 .footer
 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #000;
     color: white;
     text-align: center;
     padding: 10px 0;
 	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 }
 
 .forma1_cim
