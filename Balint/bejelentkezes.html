@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejelentkezés</title>
+    <link rel="stylesheet" href="bejelentkezes.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Bejelentkezés</h2>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <label for="username">Felhasználónév</label>
+            <input type="text" id="username" name="username" placeholder="Add meg a felhasználónevedet">
+
+            <label for="password">Jelszó</label>
+            <input type="password" id="password" name="password" placeholder="Add meg a jelszavadat">
+
+            <button type="submit">Bejelentkezés</button>
+            <p id="error-massage"></p>
+    </div>
+    <script src="bejelentkezes.js"></script>
+</body>
+</html>
