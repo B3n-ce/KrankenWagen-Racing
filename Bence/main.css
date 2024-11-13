@@ -5,11 +5,17 @@
 
 .main_fejlec
 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 	background-color: black;
 	color: white;
 	text-align: center;
 	padding: 14px;
 	font-size: 20px;
+	border-radius: 5px;
 }
 .a
 {
@@ -39,7 +45,7 @@
 
 .focim
 {
-	font-size: 70px;
+	font-size: 80px;
 	color: white;
 	
 }
@@ -57,7 +63,7 @@
 
 .szoveg_forma_1
 {
-	font-size: 20px;
+	font-size: 35px;
 }
 
 .forma1
@@ -67,8 +73,6 @@
 	padding-left: 25px;
 	border-color:  white;
 	background-color: white;
-	margin: 20px;
-	border-radius: 20px;
 }
 
 .meglatogat_button
@@ -91,6 +95,25 @@
 	height: 300px;
 }
 
+body {
+    padding-bottom: 80px;
+}
+
+.footer
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+
 .forma1_cim
 {
 	border-style: solid;
@@ -100,10 +123,22 @@
 	margin-right: 20px;
 }
 
-footer {
-            background-color: #000;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
+.zaszlo-kep
+{
+    width: 90%;
+    height: auto;
+}
+
+.news-container
+{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.news-kep
+{
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}

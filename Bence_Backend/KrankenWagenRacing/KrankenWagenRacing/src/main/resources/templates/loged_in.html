@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Kranwagen Racing</title>
-		<link rel="stylesheet" href="bootstrap.css">
-		<link rel="stylesheet" href="main_bence.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/main_bence.css">
 	</head>
 	<body style="background-color: #f4f4f4">
 		<div class="main_fejlec">
 			<a class="a">Jegyeim</a>
 			<a class="a" href="news.html">Hírek</a>
-			<a class="a" style="text-align: right">Bejelentkezés</a>
+			<a class="a" th:href="@{/logout}">Kijelentkezés</a>
+			<a class="a">[[${user.getFullname()}]]</a>
 		</div>
 		<div class="szoveg1">		
 			<div class="focim">

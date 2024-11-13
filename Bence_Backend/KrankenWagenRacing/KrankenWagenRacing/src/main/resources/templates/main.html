@@ -2,14 +2,15 @@
 <html>
 	<head>
 		<title>Kranwagen Racing</title>
-		<link rel="stylesheet" href="bootstrap.css">
-		<link rel="stylesheet" href="main_bence.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/main_bence.css">
 	</head>
 	<body style="background-color: #f4f4f4">
 		<div class="main_fejlec">
 			<a class="a">Jegyeim</a>
 			<a class="a" href="news.html">Hírek</a>
-			<a class="a" style="text-align: right">Bejelentkezés</a>
+			<a class="a" style="text-align: right" href="registration">Regisztráció</a>
+			<a class="a" style="text-align: right" href="login">Bejelentkezés</a>
 		</div>
 		<div class="szoveg1">		
 			<div class="focim">
@@ -34,7 +35,7 @@
 					Forma 1-es futamaink a legjobb pályákon zajlanak, a legjobb versenyzőkkel, különféle kocsikkal.<br>
 					Vegye meg előre a jegyét a legjobb helyekre!
 			</div>
-			<a href="f1.html"><button class="meglatogat_button" type="button">Jegyek</button></a>
+			<a th:href="@{/login}"><button class="meglatogat_button" type="button">Jegyek</button></a>
 		</div>
 		<div class="forma1">		
 			<div style="font-size: 35px" class="forma1_cim">
@@ -45,7 +46,7 @@
 					Élményvezetésen vehet részt pályáinkon egy órán keresztül, személyesen is megtapasztalhatja ezt a vissza nem térő éményt!<br>
 					Hozza el családját is, hogy szurkoljanak önnek! Vegye meg jegyét most!
 			</div>
-			<a href="elmenyvez.html"><button class="meglatogat_button" type="button">Jegyek</button></a>
+			<a th:href="@{/login}"><button class="meglatogat_button" type="button">Jegyek</button></a>
 		</div>
 		<footer>
         <p>&copy; 2024 KrankenWagen Racing Webshop</p>
