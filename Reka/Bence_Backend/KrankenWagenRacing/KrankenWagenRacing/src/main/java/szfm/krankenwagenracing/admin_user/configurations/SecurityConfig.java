@@ -29,17 +29,16 @@ public class SecurityConfig
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
     {
         http.csrf(c -> c.disable())
-
-                .authorizeHttpRequests(request -> request.requestMatchers("/admin-page")
-                .hasAuthority("ADMIN").requestMatchers("/user-page").hasAuthority("")
-                        .requestMatchers("/registration", "/css/**").permitAll()
-                        .requestMatchers("/","/main").permitAll()
+                .authorizeHttpRequests(request -> request
+                        .requestMatchers("/admin-page").hasAuthority("ADMIN")
+                        .requestMatchers("/user-page").hasAuthority("")
+                        .requestMatchers("/registration", "/css/**", "/", "/main", "/f1_ki", "/news_ki").permitAll() // Hozzáadva /f1_ki és /news_ki
                         .anyRequest().authenticated())
-
-                .formLogin(form -> form.loginPage("/login").loginProcessingUrl("/login")
+                .formLogin(form -> form.loginPage("/login")
+                        .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/loged_in").permitAll())
-
-                .logout(form -> form.invalidateHttpSession(true).clearAuthentication(true)
+                .logout(form -> form.invalidateHttpSession(true)
+                        .clearAuthentication(true)
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                         .logoutSuccessUrl("/").permitAll());
 
