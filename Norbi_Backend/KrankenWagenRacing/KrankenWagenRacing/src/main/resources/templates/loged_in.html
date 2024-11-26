@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Kranwagen Racing</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/main_bence.css">
+	</head>
+	<body style="background-color: #f4f4f4">
+		<div class="main_fejlec">
+			<a class="a">Jegyeim</a>
+			<a class="a" href="news.html">Hírek</a>
+			<a class="a" th:href="@{/logout}">Kijelentkezés</a>
+			<a class="a">[[${user.getFullname()}]]</a>
+		</div>
+		<div class="szoveg1">		
+			<div class="focim">
+				KrankenWagen Racing
+			</div>
+			<div class="szoveg">
+					Szereti az autókat? Na és a versenyeket?<br>
+					A legjobb helyen jár!<br>
+					Nállunk a világ bármelyik részén nézheti a futamokat, a legjobb áron!<br>
+					És ez még nem minden! Akár még Ön is vezethet!
+			</div>
+		</div>
+		<div class="forma1">		
+			<div class="forma1_cim" style="font-size: 50px; font-family: myFirstFont">
+				Forma 1<br>
+			</div>
+			<div style="font-size: 35px;">
+				Aktuális pálya
+			</div>
+				<img src="palya1.jpg" class="kiskepek">
+			<div class="szoveg_forma_1">
+					Forma 1-es futamaink a legjobb pályákon zajlanak, a legjobb versenyzőkkel, különféle kocsikkal.<br>
+					Vegye meg előre a jegyét a legjobb helyekre!
+			</div>
+			<a href="tickets.html"><button class="meglatogat_button" type="button">Jegyek</button></a>
+		</div>
+		<div class="forma1">		
+			<div style="font-size: 35px" class="forma1_cim">
+				Élményvezetés
+			</div>
+			<div class="szoveg_forma_1">
+					Úgy érzi elege van abból, hogy csak nézi ahogyan mások versenyeznek? Itt a lehetőség!
+					Élményvezetésen vehet részt pályáinkon egy órán keresztül, személyesen is megtapasztalhatja ezt a vissza nem térő éményt!<br>
+					Hozza el családját is, hogy szurkoljanak önnek! Vegye meg jegyét most!
+			</div>
+			<a href="tickets.html"><button class="meglatogat_button" type="button">Jegyek</button></a>
+		</div>
+		<footer>
+        <p>&copy; 2024 KrankenWagen Racing Webshop</p>
+        <p>Kapcsolat: krankenwagenracing@versenypalya.hu | +36 30 123 4567</p>
+        <img src="favicon.png" alt="Logo" width="100">
+    </footer>
+	</body>
+</html>
