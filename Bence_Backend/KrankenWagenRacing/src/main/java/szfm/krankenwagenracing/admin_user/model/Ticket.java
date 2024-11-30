@@ -16,15 +16,25 @@ public class Ticket {
     private String name;
     private Integer price;
     private String email;
-    private Date date;
+    private String date;
+    private String type;
 
     public Ticket() {}
 
-    public Ticket(String name, Integer price, String email, Date date) {
+    public Ticket(String name, Integer price, String email, String date, String type) {
         this.name = name;
         this.price = price;
         this.email = email;
         this.date = date;
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Long getId() {
@@ -43,7 +53,7 @@ public class Ticket {
         this.name = name;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
@@ -59,11 +69,11 @@ public class Ticket {
         this.email = email;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

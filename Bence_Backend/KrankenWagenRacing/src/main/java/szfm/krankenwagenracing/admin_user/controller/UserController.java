@@ -1,7 +1,6 @@
 package szfm.krankenwagenracing.admin_user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
@@ -11,8 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import szfm.krankenwagenracing.admin_user.dto.TicketDTo;
 import szfm.krankenwagenracing.admin_user.dto.UserDto;
-import szfm.krankenwagenracing.admin_user.model.User;
-import szfm.krankenwagenracing.admin_user.service.TicketService;
 import szfm.krankenwagenracing.admin_user.service.TicketServiceInterface;
 import szfm.krankenwagenracing.admin_user.service.UserService;
 
@@ -26,8 +23,7 @@ public class UserController
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private TicketService ticketService;
+
     @Autowired
     private TicketServiceInterface ticketServiceInterface;
 
@@ -82,7 +78,7 @@ public class UserController
     {
         ticketServiceInterface.save(ticketDto);
         model.addAttribute("message", "Sikeres vásárlás");
-        return "ticket_buying";
+        return "f1";
     }
 
 }

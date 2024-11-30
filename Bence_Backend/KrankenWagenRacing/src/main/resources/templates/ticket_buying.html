@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,9 +46,13 @@
 
 <h2>Jegy Vásárlás</h2>
 
-<form id="ticketForm">
+<form id="ticketForm" th:action="@{/buy}"
+      method="post"
+      role="form"
+      th:object="${ticket}">
     <label for="username">Felhasználó név:</label>
     <input th:field="*{name}" type="text" id="username" name="username" placeholder="Add meg a neved" required>
+    <div>[[${user.getFullname()}]]</div>
 
     <label for="email">Email cím:</label>
     <input th:field="*{email}" type="email" id="email" name="email" placeholder="Add meg az email címed" required>
@@ -65,12 +69,12 @@
     <input th:field="*{price}" type="text" id="ticketPrice" name="ticketPrice" readonly>
 
     <label for="selectedTicketType">Kiválasztott típus:</label>
-    <input type="text" id="selectedTicketType" name="selectedTicketType" readonly>
+    <input th:field="*{type}" type="text" id="selectedTicketType" name="selectedTicketType" readonly>
 
     <label for="purchaseDate">Vásárlás dátuma:</label>
-    <input type="text" id="purchaseDate" name="purchaseDate" readonly>
+    <input th:field="*{date}" type="text" id="purchaseDate" name="purchaseDate" readonly>
 
-    <button type="submit">Küldés</button>
+    <input type="submit">
 </form>
 
 <script>
@@ -93,33 +97,13 @@
     // Vásárlás dátumának beállítása
     function setPurchaseDate() {
         const now = new Date();
-        const formattedDate = now.toLocaleString('hu-HU', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        });
+        const formattedDate = now.toISOString().slice(0, 19).replace("T", " ");
         purchaseDateInput.value = formattedDate;
     }
 
+
     // Oldal betöltésekor dátum beállítása
     document.addEventListener('DOMContentLoaded', setPurchaseDate);
-
-    // Űrlap elküldésekor
-    const ticketForm = document.getElementById('ticketForm');
-    ticketForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Alapértelmezett viselkedés letiltása
-
-        const username = document.getElementById('username').value;
-        const email = document.getElementById('email').value;
-        const ticketType = ticketTypeSelect.options[ticketTypeSelect.selectedIndex].text;
-        const ticketPrice = ticketPriceInput.value;
-        const purchaseDate = purchaseDateInput.value;
-
-        alert(`Felhasználó: ${username}\nEmail: ${email}\nJegy: ${ticketType}\nÁr: ${ticketPrice} Ft\nDátum: ${purchaseDate}`);
-    });
 </script>
 
 </body>
