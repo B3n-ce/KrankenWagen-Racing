@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejelentkezés</title>
+    <link rel="stylesheet" href="css/bejelentkezes.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="message" th:if="${param.login}">
+            Hibás E-mail cím vagy jelszó
+        </div>
+
+        <div class="message" th:if="${param.logout}">
+            Kijelentkezés sikeres
+        </div>
+
+        <h2>Bejelentkezés</h2>
+        <form id="loginForm"
+        th:action="@{/login}"
+        method="post">
+            <label for="username">Felhasználónév</label>
+            <input type="email" id="username" name="username" placeholder="Add meg az email címed" required>
+
+            <label for="password">Jelszó</label>
+            <input type="password" id="password" name="password" placeholder="Add meg a jelszavadat" required>
+
+            <button type="submit">Bejelentkezés</button>
+        </form>
+    </div>
+</body>
+</html>
