@@ -1,7 +1,6 @@
 package szfm.krankenwagenracing.admin_user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
@@ -12,21 +11,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import szfm.krankenwagenracing.admin_user.dto.TicketDTo;
 import szfm.krankenwagenracing.admin_user.dto.UserDto;
 import szfm.krankenwagenracing.admin_user.service.TicketServiceInterface;
+import szfm.krankenwagenracing.admin_user.model.Ticket;
 import szfm.krankenwagenracing.admin_user.service.UserService;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 public class UserController
 {
     @Autowired
-    UserDetailsService userDetailsService;
-
-    @Autowired
-    private UserService userService;
+    private UserDetailsService userDetailsService;
 
     @Autowired
     private TicketServiceInterface ticketServiceInterface;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/")
     public String getMainPage()
@@ -45,9 +46,8 @@ public class UserController
     {
         userService.save(userDto);
         model.addAttribute("message", "Sikeres regisztráció");
-        return "redirect:/register";
+        return "register";
     }
-
 
     @GetMapping("/login")
     public String login()
@@ -58,6 +58,7 @@ public class UserController
     @GetMapping("/loged_in")
     public String userPage(Model model, Principal principal)
     {
+        // Itt a userDetailsService-t használjuk, hogy betöltsük a felhasználót
         UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
         model.addAttribute("user", userDetails);
         return "loged_in";
@@ -98,6 +99,20 @@ public class UserController
     @PostMapping("/buy")
     public String saveTicket(@ModelAttribute("ticket") TicketDTo ticketDto, Model model) {
         ticketServiceInterface.save(ticketDto);
+        model.addAttribute("ticket", ticketDto);
         return "redirect:/f1";
+    }
+
+    @GetMapping("/profile")
+    public String showProfile(Model model, Principal principal) {
+        // Itt is userDetailsService-t használunk
+        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+        model.addAttribute("user", userDetails);
+
+        // Jegyek lekérdezése az email alapján
+        List<Ticket> tickets = ticketServiceInterface.findTicketsByEmail(principal.getName());
+        model.addAttribute("tickets", tickets);
+
+        return "profile";
     }
 }

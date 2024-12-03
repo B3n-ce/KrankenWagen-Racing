@@ -2,15 +2,22 @@ package szfm.krankenwagenracing.admin_user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import szfm.krankenwagenracing.admin_user.dto.TicketDTo;
 import szfm.krankenwagenracing.admin_user.model.Ticket;
 import szfm.krankenwagenracing.admin_user.repository.TicketRepository;
+import szfm.krankenwagenracing.admin_user.dto.TicketDTo;
+
+import java.util.List;
 
 @Service
-public class TicketServiceImpl implements TicketServiceInterface{
+public class TicketServiceImpl implements TicketServiceInterface {
 
     @Autowired
     private TicketRepository ticketRepository;
+
+    @Override
+    public List<Ticket> findTicketsByEmail(String email) {
+        return ticketRepository.findByEmail(email);
+    }
 
     @Override
     public Ticket save(TicketDTo ticketDTo) {

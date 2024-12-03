@@ -10,7 +10,7 @@
 			<a class="a" th:href="@{/f1}">Jegyek</a>
 			<a class="a" th:href="@{/news}">Hírek</a>
 			<a class="a" th:href="@{/logout}">Kijelentkezés</a>
-			<a class="a">[[${user.getFullname()}]]</a>
+			<a class="a" th:href="@{/profile}">[[${user.getFullname()}]]</a>
 		</div>
 		<div class="szoveg1">		
 			<div class="focim">
@@ -30,14 +30,14 @@
 			<div style="font-size: 35px;">
 				Aktuális pálya
 			</div>
-				<img src="palya1.jpg" class="kiskepek">
+				<img src="css/palya1.jpg" class="kiskepek">
 			<div class="szoveg_forma_1">
 					Forma 1-es futamaink a legjobb pályákon zajlanak, a legjobb versenyzőkkel, különféle kocsikkal.<br>
 					Vegye meg előre a jegyét a legjobb helyekre!
 			</div>
-			<a href="f1.html"><button class="meglatogat_button" type="button">Jegyek</button></a>
+			<a th:href="@{/f1}"><button class="meglatogat_button" type="button">Jegyek</button></a>
 		</div>
-		<div class="forma1">		
+		<div class="forma1">
 			<div style="font-size: 35px" class="forma1_cim">
 				Élményvezetés
 			</div>
@@ -46,7 +46,7 @@
 					Élményvezetésen vehet részt pályáinkon egy órán keresztül, személyesen is megtapasztalhatja ezt a vissza nem térő éményt!<br>
 					Hozza el családját is, hogy szurkoljanak önnek! Vegye meg jegyét most!
 			</div>
-			<a href="elmenyvez.html"><button class="meglatogat_button" type="button">Jegyek</button></a>
+			<a th:href="@{/f1}"><button class="meglatogat_button" type="button">Jegyek</button></a>
 		</div>
 		<div class="footer">
 			2024 Forma 1 Versenypálya Webshop<br>
