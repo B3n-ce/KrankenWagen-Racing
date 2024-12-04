@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import szfm.krankenwagenracing.admin_user.dto.TicketDTo;
 import szfm.krankenwagenracing.admin_user.dto.UserDto;
 import szfm.krankenwagenracing.admin_user.service.TicketServiceInterface;
@@ -114,5 +115,18 @@ public class UserController
         model.addAttribute("tickets", tickets);
 
         return "profile";
+    }
+
+    @GetMapping("/new_name")
+    public String chaneName() {
+        return "new_name";
+    }
+
+    @PostMapping("/new_name")
+    public String updateName(@RequestParam("fullname") String newFullName, Principal principal, Model model) {
+        String currentUsername = principal.getName(); // Bejelentkezett felhasználó e-mail címe
+        userService.updateFullName(currentUsername, newFullName); // Új név mentése
+        model.addAttribute("message", "Név sikeresen frissítve!");
+        return "redirect:/profile";
     }
 }

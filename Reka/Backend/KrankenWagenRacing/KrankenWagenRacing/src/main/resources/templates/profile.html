@@ -18,7 +18,10 @@
 
 <div style="text-align: center; color: black;">
     <h2>Felhasználói információk</h2>
-    <p><strong>Név:</strong> [[${user.fullname}]]</p>
+    <p>
+        <strong>Név:</strong> [[${user.fullname}]]
+        <a th:href="@{/new_name}" style="margin-left: 10px; color: blue; text-decoration: underline;">Megváltoztatás</a>
+    </p>
     <p><strong>Email:</strong> [[${user.username}]]</p>
 </div>
 
