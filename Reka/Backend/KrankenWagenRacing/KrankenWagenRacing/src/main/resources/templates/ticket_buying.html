@@ -51,11 +51,10 @@
       role="form"
       th:object="${ticket}">
     <label for="username">Felhasználó név:</label>
-    <input th:field="*{name}" type="text" id="username" name="username" placeholder="Add meg a neved" required>
-    <div>[[${user.getFullname()}]]</div>
+    <input th:field="*{name}" type="text" id="username" name="username" placeholder="Add meg a neved" readonly>
 
     <label for="email">Email cím:</label>
-    <input th:field="*{email}" type="email" id="email" name="email" placeholder="Add meg az email címed" required>
+    <input th:field="*{email}" type="email" id="email" name="email" placeholder="Add meg az email címed" readonly>
 
     <label for="ticketType">Jegy típusa:</label>
     <select id="ticketType" name="ticketType" required>
@@ -78,6 +77,24 @@
 </form>
 
 <script>
+    // A szerver által beillesztett érték
+    const userFullName = "[[${user.getFullname()}]]";
+
+    // Az érték beállítása az input mezőbe
+    document.addEventListener('DOMContentLoaded', function () {
+        const usernameInput = document.getElementById('username');
+        usernameInput.value = userFullName;
+    });
+
+    // A szerver által beillesztett érték
+    const userEmail = "[[${user.getUsername()}]]";
+
+    // Az érték beállítása az input mezőbe
+    document.addEventListener('DOMContentLoaded', function () {
+        const emailInput = document.getElementById('email');
+        emailInput.value = userEmail;
+    });
+
     // Változók
     const ticketTypeSelect = document.getElementById('ticketType');
     const ticketPriceInput = document.getElementById('ticketPrice');
