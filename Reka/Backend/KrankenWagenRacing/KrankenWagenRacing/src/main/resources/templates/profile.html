@@ -20,7 +20,9 @@
     <h2>Felhasználói információk</h2>
     <p>
         <strong>Név:</strong> [[${user.fullname}]]
-        <a th:href="@{/new_name}" style="margin-left: 10px; color: blue; text-decoration: underline;">Megváltoztatás</a>
+    <form th:action="@{/new_name}" method="get" style="display:inline;">
+        <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Megváltoztatás</button>
+    </form>
     </p>
     <p><strong>Email:</strong> [[${user.username}]]</p>
 </div>
@@ -36,7 +38,13 @@
                 <strong>Jegy típusa:</strong> [[${ticket.getType}]]<br>
                 <strong>Jegy ára:</strong> [[${ticket.getPrice}]] Ft<br>
                 <strong>Vásárlás dátuma:</strong> [[${ticket.getDate}]]<br>
-                <!-- Elválasztó csík hozzáadása -->
+
+                <form th:action="@{/profile/delete_ticket}" method="post">
+                    <!-- Használjuk a ${ticket.id} helyett a [[${ticket.id}]] szintaxist -->
+                    <input type="hidden" name="ticketId" th:value="${ticket.id}"/>
+                    <button type="submit" class="btn btn-danger">Törlés</button>
+                </form>
+
                 <hr style="border-top: 1px solid #ccc; margin: 10px 0;">
             </li>
         </ul>

@@ -10,4 +10,6 @@ public interface TicketServiceInterface {
 
     // Add this method to the interface
     List<Ticket> findTicketsByEmail(String email);
+
+    void deleteTicketById(Long ticketId);
 }

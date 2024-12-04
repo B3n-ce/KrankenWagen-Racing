@@ -129,4 +129,11 @@ public class UserController
         model.addAttribute("message", "Név sikeresen frissítve!");
         return "redirect:/profile";
     }
+
+    @PostMapping("/profile/delete_ticket")
+    public String deleteTicket(@RequestParam("ticketId") Long ticketId, Principal principal) {
+
+        ticketServiceInterface.deleteTicketById(ticketId);
+        return "redirect:/profile";
+    }
 }
