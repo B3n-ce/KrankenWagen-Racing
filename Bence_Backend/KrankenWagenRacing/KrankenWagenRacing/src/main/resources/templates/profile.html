@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Kranwagen Racing</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body style="background-color:white">
+<div class="main_fejlec">
+    <a class="a" th:href="@{/loged_in}">Kezdőlap</a>
+    <a class="a" th:href="@{/f1}">Jegyek</a>
+    <a class="a" th:href="@{/news}">Hírek</a>
+    <a class="a" th:href="@{/logout}">Kijelentkezés</a>
+    <a class="a">[[${user.fullname}]]</a>
+</div>
+<p><br></p>
+<p class="focim" style="text-align: center;">Profil</p>
+
+<div style="text-align: center; color: black;">
+    <h2>Felhasználói információk</h2>
+    <p><strong>Név:</strong> [[${user.fullname}]]</p>
+    <p><strong>Email:</strong> [[${user.username}]]</p>
+</div>
+
+<div style="text-align: center; color: black;">
+    <h2>Vásárolt Jegyek:</h2>
+    <div th:if="${#lists.isEmpty(tickets)}">
+        Ön még nem vásárolt jegyet.
+    </div>
+    <div th:if="${!#lists.isEmpty(tickets)}">
+        <ul>
+            <li th:each="ticket : ${tickets}">
+                <strong>Jegy típusa:</strong> [[${ticket.getType}]]<br>
+                <strong>Jegy ára:</strong> [[${ticket.getPrice}]] Ft<br>
+                <strong>Vásárlás dátuma:</strong> [[${ticket.getDate}]]<br>
+                <!-- Elválasztó csík hozzáadása -->
+                <hr style="border-top: 1px solid #ccc; margin: 10px 0;">
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    2024 Forma 1 Versenypálya Webshop<br>
+    info@versenypalya.hu
+</div>
+</body>
+</html>
