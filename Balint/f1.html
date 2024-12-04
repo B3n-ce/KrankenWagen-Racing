@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Csapatok és Pilóták</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #111;
+            color: #eee;
+            text-align: center;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('f1logo.png');
+            background-repeat: no-repeat;
+            background-size: 50%;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        .corner-logo {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+        }
+        .corner-logo img {
+            width: 80px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .corner-logo img:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        h1 {
+            color: #ff0000;
+            text-shadow: 0px 0px 10px #ff0000;
+            font-size: 2.5rem;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        table:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 25px rgba(255, 0, 0, 1);
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        th {
+            background-color: #ff0000;
+            color: #fff;
+            text-shadow: 0px 0px 5px #fff;
+        }
+        td {
+            background-color: #222;
+            color: #eee;
+        }
+        tr:nth-child(even) td {
+            background-color: #333;
+        }
+        tr:hover td {
+            background-color: #ff0000;
+            color: #fff;
+            cursor: pointer;
+        }
+        caption {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #ff0000;
+            font-size: 1.5rem;
+            text-shadow: 0px 0px 5px #ff0000;
+        }
+        td:hover {
+            transform: scale(1.1);
+        }
+        th, td {
+        animation: pulse 2s infinite;
+        text-align: center;
+        border: 1px solid #444;
+        padding: 10px;
+        font-size: 1.2rem;
+        color: #eee;
+        transition: transform 0.3s ease-in-out;
+        }
+
+        @keyframes pulse {
+        0% { text-shadow: 0 0 5px #ff0000; }
+        50% { text-shadow: 0 0 15px #ff0000; }
+        100% { text-shadow: 0 0 5px #ff0000; }
+        }
+
+        td:hover, th:hover {
+        color: #ff0000;
+        transform: scale(1.1);
+        }
+        a {
+            color: #ff0000; /* Piros szín */
+            text-decoration: none; /* Aláhúzás eltávolítása */
+            transition: color 0.3s, text-shadow 0.3s;
+            z-index: 2;
+        }
+
+        a:hover {
+            color: #ffff00; /* Sárga szín hover esetén */
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; /* Piros árnyék hover esetén */
+            cursor: pointer; /* Kéz mutatós hover */
+        }
+
+        /* Táblázat stílus */
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #eee;
+            background-color: #222;
+        }
+
+        th {
+            background-color: #ff0000;
+            color: #fff;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #333;
+        }
+
+        tr:hover td {
+            background-color: #ff0000;
+            color: #fff;
+        }
+    </style>
+
+</head>
+<body>
+<div class="corner-logo">
+    <a href="https://www.formula1.com/" target="_blank">
+        <img src="f1logo.png" alt="F1 Logo">
+    </a>
+</div>
+<h1>F1 Csapatok és Pilóták</h1>
+
+<table id="f1TeamsTable">
+    <caption>F1 Csapatok Táblázat</caption>
+    <thead>
+    <tr>
+        <th>Helyezés</th>
+        <th>Csapatnév</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<table id="f1DriversTable">
+    <caption>F1 Pilóták Táblázat</caption>
+    <thead>
+    <tr>
+        <th>Helyezés</th>
+        <th>Csapatnév</th>
+        <th>Pilóták</th>
+    </tr>
+    </thead>
+    <tbody id="drivers-table-body">
+        <tr>
+            <td>1</td>
+            <td><a href="https://www.formula1.com/en/drivers/pierre-gasly" target="_blank">Pierre Gasly</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/esteban-ocon" target="_blank">Esteban Ocon</a></td>
+            <td><a href="https://www.formula1.com/en/teams/alpine" target="_blank">Alpine</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="https://www.formula1.com/en/drivers/fernando-alonso" target="_blank">Fernando Alonso</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/lance-stroll" target="_blank">Lance Stroll</a></td>
+            <td><a href="https://www.formula1.com/en/teams/aston-martin" target="_blank">Aston Martin</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><a href="https://www.formula1.com/en/drivers/charles-leclerc" target="_blank">Charles Leclerc</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/carlos-sainz" target="_blank">Carlo Sainz</a></td>
+            <td><a href="https://www.formula1.com/en/teams/ferrari" target="_blank">Ferrari</a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><a href="https://www.formula1.com/en/drivers/nico-hulkenberg" target="_blank">Nico Hulkenberg</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/kevin-magnussen" target="_blank">Kevin Magnussen</a></td>
+            <td><a href="https://www.formula1.com/en/teams/haas" target="_blank">Haas</a></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><a href="https://www.formula1.com/en/drivers/valtteri-bottas" target="_blank">Valtteri Bottas</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/guanyu-zhou" target="_blank">Guanyu Zhou</a></td>
+            <td><a href="https://www.formula1.com/en/teams/kick-sauber" target="_blank">Kick Sauber</a></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><a href="https://www.formula1.com/en/drivers/lando-norris" target="_blank">Lando Norris</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/oscar-piastri" target="_blank">Oscar Piastri</a></td>
+            <td><a href="https://www.formula1.com/en/teams/mclaren" target="_blank">McLaren</a></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><a href="https://www.formula1.com/en/drivers/lewis-hamilton" target="_blank">Lewis Hamilton</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/george-russell" target="_blank">George Russell</a></td>
+            <td><a href="https://www.formula1.com/en/teams/mercedes" target="_blank">Mercedes</a></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><a href="https://www.formula1.com/en/drivers/max-verstappen" target="_blank">Max Verstappen</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/sergio-perez" target="_blank">Sergio Perez</a></td>
+            <td><a href="https://www.formula1.com/en/teams/red-bull-racing" target="_blank">Red Bull Racing</a></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><a href="https://www.formula1.com/en/drivers/liam-lawson" target="_blank">Liam Lawson</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/yuki-tsunoda" target="_blank">Yuki Tsunoda</a></td>
+            <td><a href="https://www.formula1.com/en/teams/rb" target="_blank">RB</a></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><a href="https://www.formula1.com/en/drivers/alexander-albon" target="_blank">Alexander Albon</a></td>
+            <td><a href="https://www.formula1.com/en/drivers/franco-colapinto" target="_blank">Franco Colapinto</a></td>
+            <td><a href="https://www.formula1.com/en/teams/williams" target="_blank">Williams</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    const teams = [
+        { name: "Red Bull Racing", drivers: ["Max Verstappen", "Sergio Perez"] },
+        { name: "Mercedes", drivers: ["Lewis Hamilton", "George Russell"] },
+        { name: "Ferrari", drivers: ["Charles Leclerc", "Carlos Sainz"] },
+        { name: "McLaren", drivers: ["Lando Norris", "Oscar Piastri"] },
+        { name: "Alpine", drivers: ["Esteban Ocon", "Pierre Gasly"] },
+        { name: "Aston Martin", drivers: ["Fernando Alonso", "Lance Stroll"] },
+        { name: "Williams", drivers: ["Alex Albon", "Franco Colapinto"] },
+        { name: "RB", drivers: ["Yuki Tsunoda", "Liam Lawson"] },
+        { name: "Kick Sauber", drivers: ["Valtteri Bottas", "Zhou Guanyu"] },
+        { name: "Haas", drivers: ["Kevin Magnussen", "Nico Hülkenberg"] }
+    ];
+
+    function shuffle(array) {
+        return [...array].sort(() => Math.random() - 0.5);
+    }
+
+    function updateTeamsTable(shuffledTeams) {
+        const tbody = document.querySelector("#f1TeamsTable tbody");
+        tbody.innerHTML = "";
+        shuffledTeams.forEach((team, index) => {
+            const row = document.createElement("tr");
+
+            const positionCell = document.createElement("td");
+            positionCell.textContent = index + 1;
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = team.name;
+
+            row.appendChild(positionCell);
+            row.appendChild(nameCell);
+            tbody.appendChild(row);
+        });
+    }
+
+    function updateDriversTable(shuffledTeams) {
+        const tbody = document.querySelector("#f1DriversTable tbody");
+        tbody.innerHTML = "";
+        shuffledTeams.forEach((team, index) => {
+            const row = document.createElement("tr");
+
+            const positionCell = document.createElement("td");
+            positionCell.textContent = index + 1;
+
+            const teamCell = document.createElement("td");
+            teamCell.textContent = team.name;
+
+            const driversCell = document.createElement("td");
+            driversCell.textContent = team.drivers.join(", ");
+
+            row.appendChild(positionCell);
+            row.appendChild(teamCell);
+            row.appendChild(driversCell);
+            tbody.appendChild(row);
+        });
+    }
+
+    function loadAndUpdateTables() {
+        const savedTeams = localStorage.getItem("teams");
+        const lastUpdate = localStorage.getItem("lastUpdate");
+        const now = Date.now();
+
+        let shuffledTeams;
+        if (savedTeams && lastUpdate && now - lastUpdate < 60 * 60 * 1000) {
+            shuffledTeams = JSON.parse(savedTeams);
+        } else {
+            shuffledTeams = shuffle(teams);
+            localStorage.setItem("teams", JSON.stringify(shuffledTeams));
+            localStorage.setItem("lastUpdate", now.toString());
+        }
+
+        updateTeamsTable(shuffledTeams);
+        updateDriversTable(shuffledTeams);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        loadAndUpdateTables();
+
+        setInterval(() => {
+            const shuffledTeams = shuffle(teams);
+            localStorage.setItem("teams", JSON.stringify(shuffledTeams));
+            localStorage.setItem("lastUpdate", Date.now().toString());
+
+            updateTeamsTable(shuffledTeams);
+            updateDriversTable(shuffledTeams);
+        }, 60 * 60 * 1000);
+    });
+</script>
+</body>
+</html>
