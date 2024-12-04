@@ -46,7 +46,7 @@ public class UserController
     {
         userService.save(userDto);
         model.addAttribute("message", "Sikeres regisztráció");
-        return "register";
+        return "login";
     }
 
     @GetMapping("/login")
