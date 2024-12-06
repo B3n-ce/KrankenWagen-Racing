@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <title>Kranwagen Racing</title>
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -14,11 +14,16 @@
     <a class="a">[[${user.fullname}]]</a>
 </div>
 <p><br></p>
-<p class="focim" style="text-align: center;">Profil</p>
+<p class="focim" style="text-align: center; color: black">Profil</p>
 
 <div style="text-align: center; color: black;">
     <h2>Felhasználói információk</h2>
-    <p><strong>Név:</strong> [[${user.fullname}]]</p>
+    <p>
+        <strong>Név:</strong> [[${user.fullname}]]
+    <form th:action="@{/new_name}" method="get" style="display:inline;">
+        <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Megváltoztatás</button>
+    </form>
+    </p>
     <p><strong>Email:</strong> [[${user.username}]]</p>
 </div>
 
@@ -33,7 +38,13 @@
                 <strong>Jegy típusa:</strong> [[${ticket.getType}]]<br>
                 <strong>Jegy ára:</strong> [[${ticket.getPrice}]] Ft<br>
                 <strong>Vásárlás dátuma:</strong> [[${ticket.getDate}]]<br>
-                <!-- Elválasztó csík hozzáadása -->
+
+                <form th:action="@{/profile/delete_ticket}" method="post">
+                    <!-- Használjuk a ${ticket.id} helyett a [[${ticket.id}]] szintaxist -->
+                    <input type="hidden" name="ticketId" th:value="${ticket.id}"/>
+                    <button type="submit" class="btn btn-danger">Törlés</button>
+                </form>
+
                 <hr style="border-top: 1px solid #ccc; margin: 10px 0;">
             </li>
         </ul>

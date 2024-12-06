@@ -24,4 +24,9 @@ public class TicketServiceImpl implements TicketServiceInterface {
         Ticket ticket = new Ticket(ticketDTo.getName(), ticketDTo.getPrice(), ticketDTo.getEmail(), ticketDTo.getDate(), ticketDTo.getType());
         return ticketRepository.save(ticket);
     }
+
+    @Override
+    public void deleteTicketById(Long ticketId) {
+        ticketRepository.deleteById(ticketId); // Törlés a repository-ból
+    }
 }

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import szfm.krankenwagenracing.admin_user.dto.TicketDTo;
 import szfm.krankenwagenracing.admin_user.dto.UserDto;
 import szfm.krankenwagenracing.admin_user.service.TicketServiceInterface;
@@ -42,18 +43,25 @@ public class UserController
     }
 
     @PostMapping("/registration")
-    public String saveUser(@ModelAttribute("user") UserDto userDto, Model model)
-    {
+    public String saveUser(@ModelAttribute("user") UserDto userDto, Model model) {
+        // Ellenőrzés, hogy az e-mail cím már létezik-e
+        if (userService.emailExists(userDto.getEmail())) {
+            model.addAttribute("errorMessage", "Ezzel az e-mail címmel már regisztráltak!");
+            return "register";
+        }
         userService.save(userDto);
-        model.addAttribute("message", "Sikeres regisztráció");
         return "login";
     }
 
     @GetMapping("/login")
-    public String login()
-    {
+    public String login(@RequestParam(value = "error", required = false) String error,
+                        Model model) {
+        if (error != null) {
+            model.addAttribute("errorMessage", "Helytelen e-mail vagy jelszó!");
+        }
         return "login";
     }
+
 
     @GetMapping("/loged_in")
     public String userPage(Model model, Principal principal)
@@ -114,5 +122,25 @@ public class UserController
         model.addAttribute("tickets", tickets);
 
         return "profile";
+    }
+
+    @GetMapping("/new_name")
+    public String chaneName() {
+        return "new_name";
+    }
+
+    @PostMapping("/new_name")
+    public String updateName(@RequestParam("fullname") String newFullName, Principal principal, Model model) {
+        String currentUsername = principal.getName(); // Bejelentkezett felhasználó e-mail címe
+        userService.updateFullName(currentUsername, newFullName); // Új név mentése
+        model.addAttribute("message", "Név sikeresen frissítve!");
+        return "redirect:/profile";
+    }
+
+    @PostMapping("/profile/delete_ticket")
+    public String deleteTicket(@RequestParam("ticketId") Long ticketId, Principal principal) {
+
+        ticketServiceInterface.deleteTicketById(ticketId);
+        return "redirect:/profile";
     }
 }

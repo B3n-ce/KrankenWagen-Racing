@@ -21,4 +21,18 @@ public class UserServicempl implements UserService
         User user = new User(userDto.getEmail(),  userDto.getFullname(), passwordEncoder.encode(userDto.getPassword()), userDto.getRole());
         return userRepository.save(user);
     }
+
+    @Override
+    public void updateFullName(String email, String newFullName) {
+        User user = userRepository.findByEmail(email); // E-mail alapján keressük a felhasználót
+        if (user != null) {
+            user.setFullname(newFullName); // Új név beállítása
+            userRepository.save(user);    // Változások mentése
+        }
+    }
+
+    public boolean emailExists(String email) {
+        return userRepository.findByEmail2(email).isPresent();
+    }
+
 }

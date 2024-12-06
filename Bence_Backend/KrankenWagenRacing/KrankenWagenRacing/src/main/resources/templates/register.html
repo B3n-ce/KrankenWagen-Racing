@@ -11,6 +11,9 @@
   <div class="message" th:if="${message != null}">
       [[${message}]]
   </div>
+  <div th:if="${errorMessage}" class="alert alert-danger">
+    <span th:text="${errorMessage}"></span>
+  </div>
   <h2>Regisztráció</h2>
   <form th:action="@{/registration}"
   method="post"

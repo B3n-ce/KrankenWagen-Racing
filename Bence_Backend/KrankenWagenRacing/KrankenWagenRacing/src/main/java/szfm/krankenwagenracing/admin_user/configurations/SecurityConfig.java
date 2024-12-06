@@ -30,13 +30,12 @@ public class SecurityConfig
     {
         http.csrf(c -> c.disable())
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/registration", "/css/**", "/", "/main", "/f1_ki", "/news_ki").permitAll()
+                        .requestMatchers("/registration", "/css/**", "/", "/main", "/f1_ki", "/news_ki").permitAll() // Hozzáadva /f1_ki és /news_ki
                         .anyRequest().authenticated())
 
                 .formLogin(form -> form.loginPage("/login")
                         .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/loged_in", true).permitAll())
-
 
                 .logout(form -> form.invalidateHttpSession(true)
                         .clearAuthentication(true)

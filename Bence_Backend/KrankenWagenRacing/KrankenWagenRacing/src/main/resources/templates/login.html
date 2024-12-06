@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +8,9 @@
 </head>
 <body>
     <div class="login-container">
-        <div class="message" th:if="${param.login}">
-            Hibás E-mail cím vagy jelszó
+        <div th:if="${errorMessage}" style="color: red;">
+            <p th:text="${errorMessage}"></p>
         </div>
-
         <div class="message" th:if="${param.logout}">
             Kijelentkezés sikeres
         </div>
