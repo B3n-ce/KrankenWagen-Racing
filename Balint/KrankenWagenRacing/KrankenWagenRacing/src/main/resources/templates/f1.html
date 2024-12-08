@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kranwagen Racing</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="main_fejlec">
+    <a class="a" th:href="@{/loged_in}">Kezdőlap</a>
+    <a class="a" th:href="@{/news}">Hírek</a>
+    <a class="a" th:href="@{/logout}">Kijelentkezés</a>
+    <a class="a" th:href="@{/profile}">[[${user.getFullname()}]]</a>
+</div>
+
+<header>
+    <h1>Forma 1 Jegyvásárlás</h1>
+</header>
+
+<section>
+    <h2>Jegytípusaink:</h2>
+    <div class="ticket-category">
+
+        <!-- Normál jegy -->
+        <div class="ticket">
+            <img src="https://pb2.jegy.hu/imgs/system-4/program/000/115/314/formula-1-magyar-nagydij-2022-allojegy-hetvege-junior-original-165161.jpg" alt="Normál jegy">
+            <h3>Normál Jegy</h3>
+            <ul class="info-list">
+                <li>Az álló jegy a Hungaroring területén belüli állóhelyekre enged belépést. A jegyek nem konkrét helyre szólnak, azok az erre a célra 		  kialakított területre (füves terület) engednek a nézőknek szabad elhelyezkedést.</li>
+                <li>A látogató egészen a pályacsík közelében található kerítésig, a biztonsági személyzet által engedélyezett közelségig le tud 		  menni.</li>
+                <li>Az állójegyekkel a tribünökön nem lehet tartózkodni, a tribünök elé nem lehet beállni.</li>
+            </ul>
+            <p>Ár: 60 000 Ft</p>
+            <a th:href="@{/buy}">Vásárlás</a>
+        </div>
+
+        <!-- VIP jegy -->
+        <div class="ticket">
+            <img src="https://vezess2.p3k.hu/app/uploads/2022/07/hungaroring_paddock_club_2-700x467.jpg" alt="VIP jegy">
+            <h3>VIP Jegy</h3>
+            <ul class="info-list">
+                <li>Háromnapos belépőjegy</li>
+                <li>Belépés a pálya nézőtéri oldalára</li>
+                <li>Ülőhely a Hungaroring tribün prémium szektorában</li>
+                <li>Számozatlan, fedett ülőhely</li>
+                <li>Vendéglátás a F1 Fan Lounge-ban a Hungaroring tribün mögött szombaton és vasárnap</li>
+                <li>Légkondicionált helyiség</li>
+                <li>Svédasztalos reggeli, ebéd és snack</li>
+                <li>Bár: kávé, tea, üdítő, sör, bor</li>
+                <li>Parkolás (4 belépőjegy után 1 Vendég parkolójegyet biztosítunk, mely a Premium parkolóba érvényes)</li>
+            </ul>
+            <p>Ár: 705 000 Ft</p>
+            <a th:href="@{/buy}">Vásárlás</a>
+        </div>
+
+        <!-- Páholy jegy -->
+        <div class="ticket">
+            <img src="https://pb2.jegy.hu/imgs/system-4/program/000/121/574/formula-1-magyar-nagydij-2022-3-corner-gold-1-hetvege-junior-original-164887.JPG" alt="Páholy jegy">
+            <h3>Páholy Jegy</h3>
+            <ul class="info-list">
+                <li>Rálátást biztosít a teljes célegyenesre és a boxokra, az 1-es és 14-es kanyarokra, a verseny megnyitójára, a startra, a verseny befejezésére és a versenyt követő díjkiosztó ünnepségre.</li>
+                <li>Az egyetlen fedett tribün, mely jó és rossz időben is tökéletes élményt biztosít a verseny teljes időtartama alatt. A tribünön található ülőhelyek számozottak, tehát minden megvásárolt jegyhez saját ülőhely tartozik. A tribün előtt videofalon lehet követni a verseny alakulását és a közvetítést.</li>
+                <li>A lelátó közelében vendéglátó egységek találhatók, melyek biztosítják az étel-ital ellátást, illetve a Hungaroring kiállítási területe a Funzone, ahol számos érdekességgel, szórakozási lehetőséggel, és shoppal találkozhat a látogató.</li>
+            </ul><p>Ár: 240 000 Ft</p>
+            <a th:href="@{/buy}">Vásárlás</a>
+        </div>
+
+        <!-- Box utcai belépő -->
+        <div class="ticket">
+            <img src="https://scontent.fbud5-1.fna.fbcdn.net/v/t39.30808-6/451791851_817079230516914_9121021153956605027_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=sOLLWpU0lK4Q7kNvgEEGOGe&_nc_zt=23&_nc_ht=scontent.fbud5-1.fna&_nc_gid=AudYFd9N88VPvXsLglUX352&oh=00_AYD54K-yZBERosPXykVH6IdC6ul5MZDnsKbpukNcvOHGlg&oe=67154FED" alt="Box utcai belépő">
+            <h3>Box utcai belépő</h3>
+            <ul class="info-list">
+                <li>Az idén újra visszatérhetnek a szurkolók a Hungaroring boxutcájába – a Magyar Nagydíj előtti csütörtök délután 16 és 19 óra között tartandó boxutca-látogatásra limitált számban vásárolhatók belépők. </li>
+                <li>A jegyekhez a hétvégi bérlettel rendelkezők juthatnak hozzá – 25 eurós áron. </li>
+            </ul>
+            <p>Ár: 10 000 Ft</p>
+            <a th:href="@{/buy}">Vásárlás</a>
+        </div>
+
+        <!-- Gyerek jegy -->
+        <div class="ticket">
+            <img src="https://cdn-1.latimages.com/images/mgl/1Z4pVM/s4/dcd1728jy650.jpg">
+            <h3>Gyerek Jegy</h3>
+            <ul class="info-list">
+                <li><b>A gyerek jegyet 0-13 éves korig lehet megvásárolni! 14 éves kortól már normál belépő vásárlása szükséges.
+                    Tehát 2011. 08. 03 után született gyerekek jogosultak a junior jeggyel a rendezvényre belépni!</b></li>
+            </ul>
+            <p>Ár: 20 000 Ft</p>
+            <a th:href="@{/buy}">Vásárlás</a>
+        </div>
+
+        <!-- Családi jegy -->
+        <div class="ticket">
+            <img src="https://formularapida.net/wp-content/uploads/2023/05/SI202304290822-scaled.jpg">
+            <h3>Családi Jegy</h3>
+            <ul class="info-list">
+                <li>Élje át az egész család a verseny izgalmát kedvezményes csomagban, ami 2 felnőtt és 2 gyerek jegyet tartalmaz.</li>
+            </ul>
+            <p>Ár: 120 000 Ft</p>
+            <a th:href="@{/buy}">Vásárlás</a>
+        </div>
+
+    </div>
+</section>
+
+<div class="footer">
+    2024 Forma 1 Versenypálya Webshop<br>
+    info@versenypalya.hu
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Kranwagen Racing</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body style="background-color: #f4f4f4">
+		<div class="main_fejlec">
+			<a class="a" th:href="@{/f1_ki}">Jegyek</a>
+			<a class="a" th:href="@{/news_ki}">Hírek</a>
+			<a class="a" style="text-align: right" href="registration">Regisztráció</a>
+			<a class="a" style="text-align: right" href="login">Bejelentkezés</a>
+		</div>
+		<div class="szoveg1">		
+			<div class="focim">
+				KrankenWagen Racing
+			</div>
+			<div class="szoveg">
+					Szereti az autókat? Na és a versenyeket?<br>
+					A legjobb helyen jár!<br>
+					Nállunk a világ bármelyik részén nézheti a futamokat, a legjobb áron!<br>
+					És ez még nem minden! Akár még Ön is vezethet!
+			</div>
+		</div>
+		<div class="forma1">		
+			<div class="forma1_cim" style="font-size: 50px; font-family: myFirstFont">
+				Forma 1<br>
+			</div>
+			<div style="font-size: 35px;">
+				Aktuális pálya
+			</div>
+				<img src="css/palya1.jpg" class="kiskepek">
+			<div class="szoveg_forma_1">
+					Forma 1-es futamaink a legjobb pályákon zajlanak, a legjobb versenyzőkkel, különféle kocsikkal.<br>
+					Vegye meg előre a jegyét a legjobb helyekre!
+			</div>
+			<a th:href="@{/f1_ki}"><button class="meglatogat_button" type="button">Jegyek</button></a>
+		</div>
+		<div class="forma1">		
+			<div style="font-size: 35px" class="forma1_cim">
+				F1-es ranglista
+			</div>
+			<div class="szoveg_forma_1">
+					Megtetszett magának az oldalunk, szeretne jegyvásárlás közben szeretne tájékozódni
+					A legfrissebb F1-es hírekről és helyezésekről?
+					A legjobb helyen jár, KrankenWagen mert mi magáért vagyunk!
+			</div>
+			<a th:href="@{/f1tablazat}"><button class="meglatogat_button" type="button">Irány az oldalra</button></a>
+		</div>
+		<div class="footer">
+			2024 Forma 1 Versenypálya Webshop<br>
+			info@versenypalya.hu
+		</div>
+	</body>
+</html>

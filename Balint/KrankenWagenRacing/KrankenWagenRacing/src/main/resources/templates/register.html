@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regisztráció</title>
+  <link rel="stylesheet" href="css/regisztracio.css">
+</head>
+<body>
+<div class="register-container">
+  <div class="message" th:if="${message != null}">
+      [[${message}]]
+  </div>
+  <div th:if="${errorMessage}" class="alert alert-danger">
+    <span th:text="${errorMessage}"></span>
+  </div>
+  <h2>Regisztráció</h2>
+  <form th:action="@{/registration}"
+  method="post"
+  role="form"
+  th:object="${user}">
+    <label for="fullname">Felhasználónév</label>
+    <input th:field="*{fullname}" type="text" id="fullname" name="fullname" placeholder="Add meg a felhasználónevedet" required>
+
+    <label for="email">Email</label>
+    <input th:field="*{email}" type="email" id="email" name="email" placeholder="Add meg az E-mail címed" required>
+
+    <label for="password">Jelszó</label>
+    <input th:field="*{password}" type="password" id="password" name="password" placeholder="Add meg a jelszavadat" required>
+
+    <button type="submit">Regisztráció</button>
+  </form>
+</div>
+</body>
+</html>

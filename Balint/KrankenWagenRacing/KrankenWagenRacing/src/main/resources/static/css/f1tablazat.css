@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #111;
+    color: #eee;
+    text-align: center;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('f1logo.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.corner-logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.corner-logo img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.corner-logo img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+h1 {
+    color: #ff0000;
+    text-shadow: 0px 0px 10px #ff0000;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0px 0px 10px #ff0000;
+    }
+    to {
+        text-shadow: 0px 0px 20px #ff4444;
+    }
+}
+
+h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 15px #ff0000, 0px 0px 30px #ff0000;
+    margin-bottom: 10px;
+    animation: pulse 2s infinite;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0px 0px 10px #ff0000, 0px 0px 30px #ff0000;
+    }
+    50% {
+        text-shadow: 0px 0px 20px #ff5555, 0px 0px 40px #ff5555;
+    }
+}
+
+table {
+    margin: 50px auto;
+    border-collapse: collapse;
+    width: 80%;
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+table:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(255, 0, 0, 1);
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #222;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+th {
+    background-color: #ff0000;
+    color: white;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+td a {
+    color: #ff0000;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+td:hover a {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+}
+
+tr:nth-child(even) td {
+    background-color: #333;
+}
+
+tr:hover td {
+    background-color: #444;
+}
+
+td:hover, th:hover {
+    transform: scale(1.1);
+    background-color: #ff0000;
+    color: white;
+}
+
+#driver-table, #team-table {
+    margin-top: 20px;
+}
