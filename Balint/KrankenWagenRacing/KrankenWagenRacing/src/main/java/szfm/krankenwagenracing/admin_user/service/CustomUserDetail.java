@@ -1,6 +1,5 @@
 package szfm.krankenwagenracing.admin_user.service;
 
-import org.hibernate.query.sql.internal.ParameterRecognizerImpl;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import szfm.krankenwagenracing.admin_user.model.User;

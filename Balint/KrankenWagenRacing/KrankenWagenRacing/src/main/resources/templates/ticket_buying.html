@@ -76,35 +76,29 @@
     <label for="purchaseDate">Vásárlás dátuma:</label>
     <input th:field="*{date}" type="text" id="purchaseDate" name="purchaseDate" readonly>
 
-    <input type="submit" name="Vásárlás">
+    <input type="submit" value="Vásárlás">
 </form>
 
 <script>
-    // A szerver által beillesztett érték
     const userFullName = "[[${user.getFullname()}]]";
 
-    // Az érték beállítása az input mezőbe
     document.addEventListener('DOMContentLoaded', function () {
         const usernameInput = document.getElementById('username');
         usernameInput.value = userFullName;
     });
 
-    // A szerver által beillesztett érték
     const userEmail = "[[${user.getUsername()}]]";
 
-    // Az érték beállítása az input mezőbe
     document.addEventListener('DOMContentLoaded', function () {
         const emailInput = document.getElementById('email');
         emailInput.value = userEmail;
     });
 
-    // Változók
     const ticketTypeSelect = document.getElementById('ticketType');
     const ticketPriceInput = document.getElementById('ticketPrice');
     const selectedTicketTypeInput = document.getElementById('selectedTicketType');
     const purchaseDateInput = document.getElementById('purchaseDate');
 
-    // Eseménykezelő a jegytípus változására
     ticketTypeSelect.addEventListener('change', function() {
         const selectedOption = ticketTypeSelect.options[ticketTypeSelect.selectedIndex];
         const price = selectedOption.getAttribute('data-price');
@@ -114,7 +108,6 @@
         selectedTicketTypeInput.value = type || '';
     });
 
-    // Vásárlás dátumának beállítása
     function setPurchaseDate() {
         const now = new Date();
         const formattedDate = now.toISOString().slice(0, 19).replace("T", " ");
@@ -122,7 +115,6 @@
     }
 
 
-    // Oldal betöltésekor dátum beállítása
     document.addEventListener('DOMContentLoaded', setPurchaseDate);
 </script>
 

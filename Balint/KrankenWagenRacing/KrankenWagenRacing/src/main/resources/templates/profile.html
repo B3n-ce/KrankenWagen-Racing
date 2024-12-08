@@ -40,7 +40,6 @@
                 <strong>Vásárlás dátuma:</strong> [[${ticket.getDate}]]<br>
 
                 <form th:action="@{/profile/delete_ticket}" method="post">
-                    <!-- Használjuk a ${ticket.id} helyett a [[${ticket.id}]] szintaxist -->
                     <input type="hidden" name="ticketId" th:value="${ticket.id}"/>
                     <button type="submit" class="btn btn-danger">Törlés</button>
                 </form>

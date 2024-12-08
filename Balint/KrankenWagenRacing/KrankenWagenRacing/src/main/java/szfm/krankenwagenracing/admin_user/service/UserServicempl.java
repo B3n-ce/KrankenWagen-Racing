@@ -24,10 +24,10 @@ public class UserServicempl implements UserService
 
     @Override
     public void updateFullName(String email, String newFullName) {
-        User user = userRepository.findByEmail(email); // E-mail alapján keressük a felhasználót
+        User user = userRepository.findByEmail(email);
         if (user != null) {
-            user.setFullname(newFullName); // Új név beállítása
-            userRepository.save(user);    // Változások mentése
+            user.setFullname(newFullName);
+            userRepository.save(user);
         }
     }
 

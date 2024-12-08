@@ -1,6 +1,5 @@
 package szfm.krankenwagenracing.admin_user.dto;
 
-import java.util.Date;
 
 public class TicketDTo {
     private String name;

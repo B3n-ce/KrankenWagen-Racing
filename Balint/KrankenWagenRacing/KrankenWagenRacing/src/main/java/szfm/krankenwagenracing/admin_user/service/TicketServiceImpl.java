@@ -27,6 +27,6 @@ public class TicketServiceImpl implements TicketServiceInterface {
 
     @Override
     public void deleteTicketById(Long ticketId) {
-        ticketRepository.deleteById(ticketId); // Törlés a repository-ból
+        ticketRepository.deleteById(ticketId);
     }
 }

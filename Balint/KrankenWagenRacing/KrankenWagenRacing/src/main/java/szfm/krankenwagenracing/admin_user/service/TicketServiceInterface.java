@@ -8,7 +8,6 @@ import java.util.List;
 public interface TicketServiceInterface {
     Ticket save(TicketDTo ticketDTo);
 
-    // Add this method to the interface
     List<Ticket> findTicketsByEmail(String email);
 
     void deleteTicketById(Long ticketId);

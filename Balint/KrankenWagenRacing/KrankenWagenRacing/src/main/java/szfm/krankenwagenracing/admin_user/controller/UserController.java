@@ -44,7 +44,6 @@ public class UserController
 
     @PostMapping("/registration")
     public String saveUser(@ModelAttribute("user") UserDto userDto, Model model) {
-        // Ellenőrzés, hogy az e-mail cím már létezik-e
         if (userService.emailExists(userDto.getEmail())) {
             model.addAttribute("errorMessage", "Ezzel az e-mail címmel már regisztráltak!");
             return "register";
@@ -66,7 +65,6 @@ public class UserController
     @GetMapping("/loged_in")
     public String userPage(Model model, Principal principal)
     {
-        // Itt a userDetailsService-t használjuk, hogy betöltsük a felhasználót
         UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
         model.addAttribute("user", userDetails);
         return "loged_in";
@@ -119,11 +117,9 @@ public class UserController
 
     @GetMapping("/profile")
     public String showProfile(Model model, Principal principal) {
-        // Itt is userDetailsService-t használunk
         UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
         model.addAttribute("user", userDetails);
 
-        // Jegyek lekérdezése az email alapján
         List<Ticket> tickets = ticketServiceInterface.findTicketsByEmail(principal.getName());
         model.addAttribute("tickets", tickets);
 
@@ -137,8 +133,8 @@ public class UserController
 
     @PostMapping("/new_name")
     public String updateName(@RequestParam("fullname") String newFullName, Principal principal, Model model) {
-        String currentUsername = principal.getName(); // Bejelentkezett felhasználó e-mail címe
-        userService.updateFullName(currentUsername, newFullName); // Új név mentése
+        String currentUsername = principal.getName();
+        userService.updateFullName(currentUsername, newFullName);
         model.addAttribute("message", "Név sikeresen frissítve!");
         return "redirect:/profile";
     }
