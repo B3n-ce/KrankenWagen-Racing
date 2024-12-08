@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Kranwagen Racing</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body style="background-color: #f4f4f4">
+		<div class="main_fejlec">
+			<a class="a" th:href="@{/f1}">Jegyek</a>
+			<a class="a" th:href="@{/news}">Hírek</a>
+			<a class="a" th:href="@{/logout}">Kijelentkezés</a>
+			<a class="a" th:href="@{/profile}">[[${user.getFullname()}]]</a>
+		</div>
+		<div class="szoveg1">		
+			<div class="focim">
+				KrankenWagen Racing
+			</div>
+			<div class="szoveg">
+					Szereti az autókat? Na és a versenyeket?<br>
+					A legjobb helyen jár!<br>
+					Nállunk a világ bármelyik részén nézheti a futamokat, a legjobb áron!<br>
+			</div>
+		</div>
+		<div class="forma1">		
+			<div class="forma1_cim" style="font-size: 50px; font-family: myFirstFont">
+				Forma 1<br>
+			</div>
+			<div style="font-size: 35px;">
+				Aktuális pálya
+			</div>
+				<img src="css/palya1.jpg" class="kiskepek">
+			<div class="szoveg_forma_1">
+					Forma 1-es futamaink a legjobb pályákon zajlanak, a legjobb versenyzőkkel, különféle kocsikkal.<br>
+					Vegye meg előre a jegyét a legjobb helyekre!
+			</div>
+			<a th:href="@{/f1}"><button class="meglatogat_button" type="button">Jegyek</button></a>
+		</div>
+		<div class="footer">
+			2024 Forma 1 Versenypálya Webshop<br>
+			info@versenypalya.hu
+		</div>
+	</body>
+</html>

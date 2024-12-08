@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Kranwagen Racing</title>
-		<link rel="stylesheet" href="../bootstrap.css">
-		<link rel="stylesheet" href="main.css">
-	</head>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Kranwagen Racing</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
 	<body style="background-color:black">
 		<div class="main_fejlec">
-			<a class="a" href="main.html">Kezdőlap</a>
-			<a class="a">Jegyeim</a>
+            <a class="a" th:href="@{/loged_in}">Kezdőlap</a>
+            <a class="a" th:href="@{/f1}">Jegyek</a>
+            <a class="a" th:href="@{/logout}">Kijelentkezés</a>
+            <a class="a" th:href="@{/profile}">[[${user.getFullname()}]]</a>
 		</div>
         <p><br></p>
         <p class="focim" style="text-align: center;">Hírek</p>
@@ -16,7 +18,7 @@
 		<div class="forma1">
             <div style="font-size: 50px">A legutóbbi győztes:</div>
             <div class="news-container">
-                <img src="auto.jpg" alt="" class="news-kep">
+                <img src="css/auto.jpg" alt="" class="news-kep">
                 <div class="szoveg_forma_1">
                     XY hihetetlen időt ment! Nagyon jó teljesítményt nyújtott a versenyen, ezzel megnyerve a díjunkat!
                     A verseny során félelmet nem ismerve vette a kanyarokat és szélsebesen ment, hogy az első helyen végezzen.
@@ -25,7 +27,7 @@
             </div>
         </div>
         <div style="text-align: center;">
-            <img src="zaszlo.jpeg" alt="" class="zaszlo-kep">
+            <img src="css/zaszlo.jpeg" alt="" class="zaszlo-kep">
         </div>
         <div class="forma1">		
         <div style="font-size: 50px">A legutóbbi vesztes:</div>
@@ -35,16 +37,16 @@
                     XY számára nem a tervek szerint alakultak a dolgok, aki az utolsó helyen végzett.
                     A pilóta reménykedett egy jobb eredményben, de nehézségek miatt nem tudta kihasználni a lehetőségeit a verseny során.
                 </div>
-                <img src="auto2.jpg" alt="" class="news-kep">
+                <img src="css/auto2.jpg" alt="" class="news-kep">
             </div>
         </div>
         <div style="text-align: center;">
-            <img src="zaszlo.jpeg" alt="" class="zaszlo-kep">
+            <img src="css/zaszlo.jpeg" alt="" class="zaszlo-kep">
         </div>
         <div class="forma1">
             <div style="font-size: 50px">Balesetek:</div>
             <div class="news-container">
-                <img src="auto3.jpg" alt="" class="news-kep">
+                <img src="css/auto3.jpg" alt="" class="news-kep">
                 <div class="szoveg_forma_1">
                     A legutóbbi versenyen x darab baleset történt.
                     Szerencsére ez esettel nem sérült meg senki.
@@ -56,5 +58,6 @@
 			2024 Forma 1 Versenypálya Webshop<br>
 			info@versenypalya.hu
 		</div>
+        </div>
     </body>
-</head>
+</html>
