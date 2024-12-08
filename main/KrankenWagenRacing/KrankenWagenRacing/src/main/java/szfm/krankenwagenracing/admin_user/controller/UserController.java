@@ -102,6 +102,12 @@ public class UserController
         return "ticket_buying";
     }
 
+    @GetMapping("/f1tablazat")
+    public String showF1tablazat()
+    {
+        return "f1tablazat";
+    }
+
     @PostMapping("/buy")
     public String saveTicket(@ModelAttribute("ticket") TicketDTo ticketDto, Model model) {
         ticketServiceInterface.save(ticketDto);
