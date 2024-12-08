@@ -5,64 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ec7257d-fed5-444c-ab7c-8f0d0ce6e8b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Balint/f1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/.idea/Bence_Backend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/KrankenWagenRacingApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/configurations/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/dto/TicketDTo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/model/Ticket.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/repository/TicketRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/service/CustomUserDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/service/CustomUserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/service/TicketServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/service/TicketServiceInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/service/UserServicempl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/TRACER.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/TRACERI_.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/auto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/auto2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/auto3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/bejelentkezes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/hatter.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/link1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/palya1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/regisztracio.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/zaszlo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/f1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/f1_ki.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/loged_in.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/new_name.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/news.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/news_ki.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/ticket_buying.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reka/Backend/KrankenWagenRacing/KrankenWagenRacing/src/test/java/szfm/krankenwagenracing/KrankenWagenRacingApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Balint/KrankenWagenRacing/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Balint/KrankenWagenRacing/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/java/szfm/krankenwagenracing/admin_user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/regisztracio.css" beforeDir="false" afterPath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/static/css/regisztracio.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/loged_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/loged_in.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Balint/KrankenWagenRacing/KrankenWagenRacing/src/main/resources/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
